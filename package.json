@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "start": "env-cmd --verbose -f .env nx serve hackathon-backend",
-    "build": "nx build"
+    "build": "nx build --verbose hackathon-backend"
   },
   "private": true,
   "dependencies": {
