@@ -25,19 +25,24 @@ export class ProgramService {
     }
 }
 
-    async getPrograms(){
-
-        const [err,programs]=await to(this.programModel.find({}).lean().exec()) as any;
-
-        if(err){
-            console.log(`getPrograms failed with ${err.message}`)
-            throw new Error(`Failed to get programs: ${err.message}`)
-        }
-
-        console.log("getPrograms completed")
-        return { 
-            data: programs
-        }
+async getPrograms() {
+    const [err, programs] = await to(
+      this.programModel.find({}).lean().exec()
+    ) as any;
+  
+    if (err) {
+      console.error(`getPrograms failed with ${err.message}`);
+      throw new Error(`Failed to get programs: ${err.message}`);
     }
+  
+    console.log("getPrograms completed");
+  
+    return {
+      success: true,
+      totalCount: programs.length, 
+      result: programs,         
+    };
+  }
+  
     
 }

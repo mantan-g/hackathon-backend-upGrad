@@ -9,7 +9,7 @@ export class ProgramController {
   async createProgram(@Body() body: any) {
     return this.programService.createProgram(body);
   }
-  @Get('programs')
+  @Get('programList')
   async getPrograms(){
     return this.programService.getPrograms();
   }
