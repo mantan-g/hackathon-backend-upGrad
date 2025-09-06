@@ -13,12 +13,13 @@ export const ProgramSchema = new mongoose.Schema(
           {
             title: { type: String, required: true },
             description: { type: String, required: true },
-            asset: { type: mongoose.Schema.Types.Mixed, required: true },
+            asset: {
+               type: mongoose.Schema.Types.Mixed, required: true },
           },
         ],
-        overView: { type: mongoose.Schema.Types.Mixed, required: false },
       },
     ],
+    overView: { type: mongoose.Schema.Types.Mixed, required: false },
   },
   {
     timestamps: true,
