@@ -6,7 +6,10 @@ import { ProgramSchema } from './program.schema';
 
 @Module({
   imports: [
-    MongooseModule.forFeature([{ name: 'Program', schema: ProgramSchema }]),
+    MongooseModule.forFeature(
+      [{ name: 'Program', schema: ProgramSchema }
+
+    ]),
   ],
   controllers: [ProgramController],
   providers: [ProgramService],

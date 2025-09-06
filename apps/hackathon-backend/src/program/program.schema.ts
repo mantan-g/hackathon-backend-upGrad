@@ -16,7 +16,7 @@ export const ProgramSchema = new mongoose.Schema(
             asset: { type: mongoose.Schema.Types.Mixed, required: true },
           },
         ],
-        overView: { type: mongoose.Schema.Types.Mixed, required: true },
+        overView: { type: mongoose.Schema.Types.Mixed, required: false },
       },
     ],
   },
