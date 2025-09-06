@@ -2,7 +2,10 @@
   "name": "@hackathon-backend/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start": "env-cmd --verbose -f .env nx serve hackathon-backend",
+    "build": "nx build"
+  },
   "private": true,
   "dependencies": {
     "@nestjs/common": "^11.0.0",
@@ -25,6 +28,7 @@
     "@swc/core": "~1.5.7",
     "@swc/helpers": "~0.5.11",
     "@types/node": "20.19.9",
+    "env-cmd": "^11.0.0",
     "nx": "21.4.1",
     "prettier": "^2.6.2",
     "tslib": "^2.3.0",
