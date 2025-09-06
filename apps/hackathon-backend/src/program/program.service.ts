@@ -10,20 +10,34 @@ export class ProgramService {
         @InjectModel('Program') private readonly programModel: Model<any>,
 
       ) {}
-    
-    
-    getPrograms(): string[] {
-        return ["Program1", "Program2", "Program3"];
-    }
 
     async createProgram(assetData: any) {
         const [err,asset] = await to(this.programModel.create(assetData));
     
         if (err) {
-          throw new Error(`Failed to create asset: ${err.message}`);
+            console.log(`createProgram failed with ${err.message}`)
+          throw new Error(`Failed to create programs: ${err.message}`);
         }
 
-        return asset
+        return{
+            message: "success",
+             data: asset
+    }
+}
+
+    async getPrograms(){
+
+        const [err,programs]=await to(this.programModel.find({}).lean().exec()) as any;
+
+        if(err){
+            console.log(`getPrograms failed with ${err.message}`)
+            throw new Error(`Failed to get programs: ${err.message}`)
+        }
+
+        console.log("getPrograms completed")
+        return { 
+            data: programs
+        }
     }
     
 }

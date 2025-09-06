@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { ProgramService } from './program.service';
 
 @Controller('program')
@@ -9,4 +9,9 @@ export class ProgramController {
   async createProgram(@Body() body: any) {
     return this.programService.createProgram(body);
   }
+  @Get('programs')
+  async getPrograms(){
+    return this.programService.getPrograms();
+  }
+  
 }
