@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compileOnSave": false,
+  "files": [],
+  "references": [
+    {
+      "path": "./apps/hackathon-backend-e2e"
+    },
+    {
+      "path": "./apps/hackathon-backend"
+    }
+  ]
+}
